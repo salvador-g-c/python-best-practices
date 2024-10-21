@@ -16,7 +16,8 @@ class BasicTests(unittest.TestCase):
         "Fix the cause, not the symptom. A thing to do. - Steve Maguire",
         "Optimism is an occupational hazard of programming. A test. - Kent Beck",
         "Simplicity is the soul of efficiency. - Austin Freeman"]
-        self.assertIn(response.data, quotes)
+        response_text = response.data.decode('utf-8')
+        self.assertIn(response_text, quotes)
 
 if __name__ == "__main__":
     unittest.main()
